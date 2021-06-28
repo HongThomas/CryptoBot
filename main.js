@@ -46,7 +46,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 // const config = require('./config.json')
-const command = require('./commands.js')
+// const command = require('./commands.js')
 // // const client = new Commando.CommandoClient(
 //     {owner: '368777903888138242',
 //     commandPrefix: config.prefix
@@ -56,9 +56,9 @@ const command = require('./commands.js')
 client.on('ready', () =>{
     console.log('CryptoBot is online.')
 
-    command(client, 'ping', (message) => {
-        message.reply('Pong');
-    })
+    // command(client, 'ping', (message) => {
+    //     message.reply('Pong');
+    // })
 })
 
 client.login(process.env.DS_CRYPTO);
