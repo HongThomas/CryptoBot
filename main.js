@@ -3,7 +3,7 @@ const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-const config = require('./config.json')
+// const config = require('./config.json')
 const command = require('./commands.js')
 
 client.on('ready', () =>{
@@ -25,6 +25,5 @@ client.on('ready', () =>{
     readCommands('commands');
 })
 
-// client.login(process.env.DS_CRYPTO);
+client.login(process.env.DS_CRYPTO);
 // client.login(config.token);
-client.login('ODUzMzk5NTMwNTA1NzY0ODY0.YMU0Pw.l-SP_VuNAMp27XqhAZ9gt30EPcg');
