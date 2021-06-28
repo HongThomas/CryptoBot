@@ -56,9 +56,9 @@ const client = new Discord.Client()
 client.on('ready', () =>{
     console.log('CryptoBot is online.')
 
-    // command(client, 'ping', (message) => {
-    //     message.reply('Pong');
-    // })
+    command(client, 'ping', (message) => {
+        message.reply('Pong');
+    })
 })
 
 client.login(process.env.DS_CRYPTO);
