@@ -24,6 +24,9 @@ client.on('ready', () =>{
     }
     readCommands('commands');
 })
-
+const dotenv = require('dotenv')
+require('dotenv').config();
+// Load config
+dotenv.config({ path: './config/config.env' })
 client.login(process.env.DS_CRYPTO);
 // client.login(config.token);
