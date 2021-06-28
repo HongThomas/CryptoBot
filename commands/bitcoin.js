@@ -9,6 +9,7 @@ module.exports = {
         const CoinGeckoClient = new CoinGecko();
 
         let getBtcPrice = async () => {
+            try{
          let data = await CoinGeckoClient.simple.price({
              ids: ['bitcoin'],
              vs_currencies: ['eur', 'usd'],
@@ -27,7 +28,11 @@ module.exports = {
             .setFooter('$btc ou $bitcoin')
             .setTimestamp(Date.now());
          message.channel.send(embed);
+        } catch(e){
+            console.log('Erreur ! ' + e);
+        }
      }
+     
      getBtcPrice();
     },
 }
