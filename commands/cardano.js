@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['bitcoin', 'btc'],
+    commands: ['cardano', 'ada'],
     minArgs: 0,
     maxArgs: 0,
     callback: (message, arguments, text) => {
@@ -10,21 +10,21 @@ module.exports = {
 
         let getBtcPrice = async () => {
          let data = await CoinGeckoClient.simple.price({
-             ids: ['bitcoin'],
+             ids: ['cardano'],
              vs_currencies: ['eur', 'usd'],
          })
 
          
         const embed = new Discord.MessageEmbed()
-        .setColor('#fdcc58')
-        .setTitle('Bitcoin')
+        .setColor('#205A86')
+        .setTitle('Cardano')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.bitcoin.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
+                {name: 'Prix en €: ', value: data.data.cardano.eur + " €"},
+                {name: 'Prix en $: ', value: data.data.cardano.usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.gYEEYXuJLYw03cV0_ANzcwHaHa?pid=ImgDet&rs=1')
-            .setFooter('$btc ou $bitcoin')
+            .setThumbnail('https://th.bing.com/th/id/R927f902ee5173a5e8211c2760a3bb150?rik=tY%2fC9PM4KU3rEQ&pid=ImgRaw')
+            .setFooter('$ada ou $cardano')
             .setTimestamp(Date.now());
          message.channel.send(embed);
      }

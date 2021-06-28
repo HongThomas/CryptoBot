@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['bitcoin', 'btc'],
+    commands: ['shibainu', 'shib'],
     minArgs: 0,
     maxArgs: 0,
     callback: (message, arguments, text) => {
@@ -10,21 +10,21 @@ module.exports = {
 
         let getBtcPrice = async () => {
          let data = await CoinGeckoClient.simple.price({
-             ids: ['bitcoin'],
+             ids: ['shiba-inu'],
              vs_currencies: ['eur', 'usd'],
          })
 
          
         const embed = new Discord.MessageEmbed()
-        .setColor('#fdcc58')
-        .setTitle('Bitcoin')
+        .setColor('#FF0000')
+        .setTitle('Shiba Inu')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.bitcoin.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
+                {name: 'Prix en €: ', value: data.data['shiba-inu'].eur + " €"},
+                {name: 'Prix en $: ', value: data.data['shiba-inu'].usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.gYEEYXuJLYw03cV0_ANzcwHaHa?pid=ImgDet&rs=1')
-            .setFooter('$btc ou $bitcoin')
+            .setThumbnail('https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png')
+            .setFooter('$shib ou $shibainu')
             .setTimestamp(Date.now());
          message.channel.send(embed);
      }

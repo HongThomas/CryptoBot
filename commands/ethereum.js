@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['bitcoin', 'btc'],
+    commands: ['ethereum', 'eth'],
     minArgs: 0,
     maxArgs: 0,
     callback: (message, arguments, text) => {
@@ -8,26 +8,26 @@ module.exports = {
         const CoinGecko = require('coingecko-api');
         const CoinGeckoClient = new CoinGecko();
 
-        let getBtcPrice = async () => {
+        let getEthPrice = async () => {
          let data = await CoinGeckoClient.simple.price({
-             ids: ['bitcoin'],
+             ids: ['ethereum'],
              vs_currencies: ['eur', 'usd'],
          })
 
          
         const embed = new Discord.MessageEmbed()
-        .setColor('#fdcc58')
-        .setTitle('Bitcoin')
+        .setColor('#5d99fd')
+        .setTitle('Ethereum')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.bitcoin.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
+                {name: 'Prix en €: ', value: data.data.ethereum.eur + " €"},
+                {name: 'Prix en $: ', value: data.data.ethereum.usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.gYEEYXuJLYw03cV0_ANzcwHaHa?pid=ImgDet&rs=1')
-            .setFooter('$btc ou $bitcoin')
+            .setThumbnail('https://th.bing.com/th/id/R9e5b1716ed76c12941ce8adee6a117b0?rik=00xSdhvnNCCmlQ&pid=ImgRaw')
+            .setFooter('$eth ou $ethereum')
             .setTimestamp(Date.now());
          message.channel.send(embed);
      }
-     getBtcPrice();
+     getEthPrice();
     },
 }

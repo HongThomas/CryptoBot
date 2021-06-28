@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['bitcoin', 'btc'],
+    commands: ['harmony', 'one'],
     minArgs: 0,
     maxArgs: 0,
     callback: (message, arguments, text) => {
@@ -10,21 +10,21 @@ module.exports = {
 
         let getBtcPrice = async () => {
          let data = await CoinGeckoClient.simple.price({
-             ids: ['bitcoin'],
+             ids: ['harmony'],
              vs_currencies: ['eur', 'usd'],
          })
 
          
         const embed = new Discord.MessageEmbed()
-        .setColor('#fdcc58')
-        .setTitle('Bitcoin')
+        .setColor('#00ecff')
+        .setTitle('Harmony')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.bitcoin.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
+                {name: 'Prix en €: ', value: data.data.harmony.eur + " €"},
+                {name: 'Prix en $: ', value: data.data.harmony.usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.gYEEYXuJLYw03cV0_ANzcwHaHa?pid=ImgDet&rs=1')
-            .setFooter('$btc ou $bitcoin')
+            .setThumbnail('https://s2.coinmarketcap.com/static/img/coins/200x200/3945.png')
+            .setFooter('$one ou $harmony')
             .setTimestamp(Date.now());
          message.channel.send(embed);
      }

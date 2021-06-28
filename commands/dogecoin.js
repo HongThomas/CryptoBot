@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['bitcoin', 'btc'],
+    commands: ['dogecoin', 'doge'],
     minArgs: 0,
     maxArgs: 0,
     callback: (message, arguments, text) => {
@@ -10,21 +10,21 @@ module.exports = {
 
         let getBtcPrice = async () => {
          let data = await CoinGeckoClient.simple.price({
-             ids: ['bitcoin'],
+             ids: ['dogecoin'],
              vs_currencies: ['eur', 'usd'],
          })
 
          
         const embed = new Discord.MessageEmbed()
-        .setColor('#fdcc58')
-        .setTitle('Bitcoin')
+        .setColor('#ecefe9')
+        .setTitle('Dogecoin')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.bitcoin.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
+                {name: 'Prix en €: ', value: data.data.dogecoin.eur + " €"},
+                {name: 'Prix en $: ', value: data.data.dogecoin.usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.gYEEYXuJLYw03cV0_ANzcwHaHa?pid=ImgDet&rs=1')
-            .setFooter('$btc ou $bitcoin')
+            .setThumbnail('https://faisalkhan.com/wp-content/uploads/2015/04/rsz_1dogecoin.png')
+            .setFooter('$doge ou $dogecoin')
             .setTimestamp(Date.now());
          message.channel.send(embed);
      }
