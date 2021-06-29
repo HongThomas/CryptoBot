@@ -25,7 +25,7 @@ module.exports = {
                 
             )
             .setThumbnail('https://coindoo.com/wp-content/uploads/2020/04/vechain-coin-logo.png')
-            .setFooter('$eth ou $ethereum')
+            .setFooter('$vet ou $vechain')
             .setTimestamp(Date.now());
          message.channel.send(embed);
         } catch(e){
