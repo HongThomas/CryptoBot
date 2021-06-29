@@ -24,7 +24,7 @@ module.exports = {
                 {name: 'Prix en $: ', value: data.data.bitcoin.usd + " $"},
                 
             )
-            .setThumbnail('https://th.bing.com/th/id/OIP.RjOe954Pbx-eXP6t4oCqgwHaHa?pid=ImgDet&rs=1')
+            .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1024px-Bitcoin.svg.png')
             .setFooter('$btc ou $bitcoin')
             .setTimestamp(Date.now());
          message.channel.send(embed);
