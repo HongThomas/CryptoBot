@@ -8,7 +8,7 @@ module.exports = {
         const CoinGecko = require('coingecko-api');
         const CoinGeckoClient = new CoinGecko();
 
-        let getBtcPrice = async () => {
+        let getAdaPrice = async () => {
         try{
          let data = await CoinGeckoClient.simple.price({
              ids: ['cardano'],
@@ -32,6 +32,6 @@ module.exports = {
             console.log('Erreur ! ' + e);
         }
      }
-     getBtcPrice();
+     getAdaPrice();
     },
 }
