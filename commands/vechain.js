@@ -20,8 +20,8 @@ module.exports = {
         .setColor('#e1eeff')
         .setTitle('Vechain')
         .addFields(
-                {name: 'Prix en €: ', value: data.data.ethereum.eur + " €"},
-                {name: 'Prix en $: ', value: data.data.ethereum.usd + " $"},
+                {name: 'Prix en €: ', value: data.data.vechain.eur + " €"},
+                {name: 'Prix en $: ', value: data.data.vechain.usd + " $"},
                 
             )
             .setThumbnail('https://coindoo.com/wp-content/uploads/2020/04/vechain-coin-logo.png')
