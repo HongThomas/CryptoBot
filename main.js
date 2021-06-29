@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 // const config = require('./config.json')
-const command = require('./commands.js')
+// const command = require('./commands.js')
 
 client.on('ready', () =>{
     console.log('CryptoBot is online.')
