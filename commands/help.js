@@ -15,6 +15,7 @@ module.exports = {
                 {name: 'Shiba Inu: ', value: "``$shib`` ou ``$shibainu``"},
                 {name: 'Cardano: ', value: "``$ada`` ou ``$cardano``"},
                 {name: 'Harmony: ', value: "``$one`` ou ``$harmony``"},
+                {name: 'Vechain: ', value: "``$vet`` ou ``$vechain``"},
             )
             .setFooter('CryptotoBot');
 
