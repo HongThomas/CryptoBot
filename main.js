@@ -3,8 +3,6 @@ const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-// const config = require('./config.json')
-// const command = require('./commands.js')
 
 client.on('ready', () =>{
     console.log('CryptoBot is online.')
@@ -26,4 +24,3 @@ client.on('ready', () =>{
 })
 
 client.login(process.env.DS_CRYPTO);
-// client.login(config.token);
