@@ -5,7 +5,6 @@ module.exports = (client, commandOptions) => {
   let {
     commands,
     expectedArgs = '',
-    permissionError = 'You do not have permission to run this command.',
     minArgs = 0,
     maxArgs = null,
     callback,
@@ -32,13 +31,13 @@ module.exports = (client, commandOptions) => {
       ) {
         // Une commande a été executé
 
-        // Split on any number of spaces
+        // Enlève les espaces en cas d'erreurs
         const arguments = content.split(/[ ]+/)
 
-        // Remove the command which is the first index
+        // Enlève le nom de la commande pour garder args
         arguments.shift()
 
-        // Ensure we have the correct number of arguments
+        // Vérifier qu'on a le bon nombre d'arguments 
         if (
           arguments.length < minArgs ||
           (maxArgs !== null && arguments.length > maxArgs)
@@ -49,9 +48,9 @@ module.exports = (client, commandOptions) => {
           return
         }
 
-        // Handle the custom command code
+        // Custom command code
         callback(message, arguments, arguments.join(' '), client)
-        console.log(command)
+        console.log(command + " est executé.")
         return
       }
     }
